@@ -1,41 +1,41 @@
+Overview
+============
+Small demo api app which bases mainly on api platform and Symfony 4 LTS.
+
 Installation
 ============
 
-Make sure Composer is installed globally, as explained in the
-[installation chapter](https://getcomposer.org/doc/00-intro.md)
-of the Composer documentation.
+1. Add to composer.json:
+"minimum-stability": "dev",
+"prefer-stable": true
 
-Applications that use Symfony Flex
-----------------------------------
+2. Execute:
+composer require test-area/item-bundle
 
-Open a command console, enter your project directory and execute:
+3. Execute:
+bin/console doctrine:migrations:diff
+bin/console doctrine:migrations:migrate
 
-```console
-$ composer require <package-name>
-```
+4.Load data to db by:
+bin/console insert:item-data
+OR
+php bin/console doctrine:fixtures:load
 
-Applications that don't use Symfony Flex
-----------------------------------------
+5. PHPUNIT:
+add to phpunit.xml (in main symfony directory) entry:
+<directory>./vendor/test-area/item-bundle/tests</directory>
 
-### Step 1: Download the Bundle
+Example:
+~~~~
+<testsuites>
+    <testsuite name="Project Test Suite">
+        <directory>./vendor/test-area/item-bundle/tests</directory>
+    </testsuite>
+</testsuites>
+~~~~
 
-Open a command console, enter your project directory and execute the
-following command to download the latest stable version of this bundle:
+6. API GUI and documentation(description of endpoints, curl) should be available by /api for example: http://symfony.localhost/api/
 
-```console
-$ composer require <package-name>
-```
-
-### Step 2: Enable the Bundle
-
-Then, enable the bundle by adding it to the list of registered bundles
-in the `config/bundles.php` file of your project:
-
-```php
-// config/bundles.php
-
-return [
-    // ...
-    <vendor>\<bundle-name>\<bundle-long-name>::class => ['all' => true],
-];
-```
+LOCAL ENV
+============
+https://github.com/eko/docker-symfony
