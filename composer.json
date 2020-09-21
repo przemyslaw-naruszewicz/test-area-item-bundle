@@ -16,7 +16,6 @@
         "api-platform/core": "^2.5",
         "symfony/framework-bundle": "4.4.*",
         "symfony/yaml": "4.4.*",
-        "symfony/http-client": "^5.1",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.1",
         "doctrine/doctrine-migrations-bundle": "^3.0",
