@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    test_area_item_bundle.insert_item_data_command:
+        class: TestArea\ItemBundle\Command\InsertItemDataCommand
+
+    TestArea\ItemBundle\Repository\ItemRepository: ~
