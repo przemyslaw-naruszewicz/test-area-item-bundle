@@ -8,3 +8,6 @@ services:
         class: TestArea\ItemBundle\Command\InsertItemDataCommand
 
     TestArea\ItemBundle\Repository\ItemRepository: ~
+
+    TestArea\ItemBundle\DataFixtures\ItemFixtures: ~
+
