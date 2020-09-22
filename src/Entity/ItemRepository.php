@@ -7,6 +7,9 @@ use Doctrine\Persistence\ManagerRegistry;
 use TestArea\ItemBundle\Entity\Item;
 
 /**
+ * Class ItemRepository
+ * @package TestArea\ItemBundle\Repository
+ *
  * @method Item|null find($id, $lockMode = null, $lockVersion = null)
  * @method Item|null findOneBy(array $criteria, array $orderBy = null)
  * @method Item[]    findAll()

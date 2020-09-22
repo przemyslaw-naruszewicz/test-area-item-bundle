@@ -70,7 +70,7 @@ final class InsertItemDataCommand extends Command
     protected function configure()
     {
         $this->setDescription('Command for insertion of Items data');
-        $this->addOption('truncate', 'tr',InputOption::VALUE_NONE);
+        $this->addOption('truncate', 'tr', InputOption::VALUE_NONE);
     }
 
     /**
@@ -90,7 +90,7 @@ final class InsertItemDataCommand extends Command
         try {
             $this->executeQueries();
         } catch (DBALException $exception) {
-            $output->writeln("Error: ".$exception->getMessage());
+            $output->writeln("Error: " . $exception->getMessage());
             return 0;
         }
 
@@ -103,7 +103,7 @@ final class InsertItemDataCommand extends Command
     private function prepareSetOfQueries(): void
     {
         foreach (self::ITEMS as $item) {
-            $queryParams = sprintf("('%s', %d)", (string) $item['name'], $item['amount']);
+            $queryParams = sprintf("('%s', %d)", (string)$item['name'], $item['amount']);
             $query = sprintf("INSERT INTO `items` (`name`, `amount`) VALUES %s", $queryParams);
             $this->setOfQueries->add($query);
         }
@@ -112,7 +112,7 @@ final class InsertItemDataCommand extends Command
     /**
      * @throws DBALException
      */
-    private function executeQueries()
+    private function executeQueries(): void
     {
         $queriesAsString = implode(";", $this->setOfQueries->getValues()) . ";";
         $this->connection->executeQuery($queriesAsString);

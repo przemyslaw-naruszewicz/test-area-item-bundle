@@ -5,6 +5,10 @@ namespace TestArea\ItemBundle\Test;
 use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\ApiTestCase;
 use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\Client;
 
+/**
+ * Class ItemResourceApiTest
+ * @package TestArea\ItemBundle\Test
+ */
 class ItemResourceApiTest extends ApiTestCase
 {
     /** Reset db: bin/console insert:item-data --truncate */

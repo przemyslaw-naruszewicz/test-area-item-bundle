@@ -12,6 +12,9 @@ use ApiPlatform\Core\Annotation\ApiFilter;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * Class Item
+ * @package TestArea\ItemBundle\Entity
+ *
  * @ApiResource(
  *     collectionOperations={"get", "post"},
  *     itemOperations={"get", "patch", "delete"},

@@ -7,8 +7,8 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 /**
- * Class ItemFixtures
- * @package App\DataFixtures
+ * Class InsertItemDataCommand
+ * @package TestArea\ItemBundle\DataFixtures
  */
 class ItemFixtures extends Fixture
 {
